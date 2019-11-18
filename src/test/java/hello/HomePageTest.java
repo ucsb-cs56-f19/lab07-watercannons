@@ -55,7 +55,6 @@ public class HomePageTest {
         }
     }
 
-
     @Test
     public void getHomePage_hasCorrectTitle() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.TEXT_HTML))
@@ -63,4 +62,21 @@ public class HomePageTest {
                 .andExpect(xpath("//title").exists())
                 .andExpect(xpath("//title").string("CS56 Spring Boot Practice App"));
     }
+
+    @Test
+    public void getHomePage_hasCorrectBrand() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.TEXT_HTML))
+                .andExpect(status().isOk())
+                .andExpect(xpath("/html/body/div/nav/a").exists())
+                .andExpect(xpath("/html/body/div/nav/a").string("lab07"));
+    }
+
+    @Test
+    public void getHomePage_hasCorrectPage1() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.TEXT_HTML))
+                .andExpect(status().isOk())
+                .andExpect(xpath("/html/body/div/nav/div/ul[1]/li[2]/a").exists())
+                .andExpect(xpath("/html/body/div/nav/div/ul[1]/li[2]/a").string("Earthquakes"));
+    }
 }
+///html/body/div/nav/a
