@@ -17,6 +17,8 @@ public class FeatureCollection {
   public Metadata metadata;
   public List<Feature> features;
 
+  //public int temp = features.size();
+
   public static FeatureCollection fromJSON(String json) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
