@@ -4,6 +4,7 @@ A simple Spring Boot webapp using:
 * Github OAuth
 
 Link to page: https://ucsb-cs56-f19.github.io/lab07-watercannons/
+
 Link to Heroku app:https://cs56-f19-lab07-watercannons.herokuapp.com/
 
 # Running on Localhost.
